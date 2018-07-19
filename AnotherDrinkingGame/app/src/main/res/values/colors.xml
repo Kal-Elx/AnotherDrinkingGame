@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4f4f4f</color>
+    <color name="colorPrimaryDark">#434343</color>
+    <color name="colorAccent">#00B3FF</color>
+    <color name="gray">#a4a4a4</color>
+    <color name="transparent">#00a4a4a4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="NHIE_color">#c966f0</color>
+    <color name="PG_color">#48a818</color>
+    <color name="B2B_color">#01aadd</color>
+    <color name="CATEGORY_color">#ff3636</color>
+    <color name="RYME_color">#36ffc9</color>
+    <color name="MISSION_color">#fff536</color>
+</resources>

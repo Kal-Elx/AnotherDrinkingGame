@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/information_icon"
+        android:title="@string/instructions"
+        android:icon="@drawable/info"
+        app:showAsAction="ifRoom|never">
+    </item>
+
+    <item
+        android:id="@+id/finished_icon"
+        android:title="@string/done"
+        android:icon="@drawable/check"
+        app:showAsAction="ifRoom">
+    </item>
+
+</menu>

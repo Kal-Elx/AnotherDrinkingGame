@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/information_icon"
+        android:title="@string/information"
+        android:icon="@drawable/info_black"
+        app:showAsAction="ifRoom|never">
+    </item>
+
+</menu>

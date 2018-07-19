@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="se.kalelx.anotherdrinkinggame">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.WarningActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:label=""/>
+        <activity android:name="se.kalelx.anotherdrinkinggame.activity.SetupActivity"
+            android:screenOrientation="portrait"
+            android:label=""
+            android:noHistory="true" />
+        <activity android:name="se.kalelx.anotherdrinkinggame.activity.SettingsActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:parentActivityName="se.kalelx.anotherdrinkinggame.activity.HomeActivity"/>
+        <activity android:name="se.kalelx.anotherdrinkinggame.activity.RulesActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:parentActivityName="se.kalelx.anotherdrinkinggame.activity.HomeActivity"/>
+        <activity android:name="se.kalelx.anotherdrinkinggame.activity.QuestionActivity"
+            android:label=""
+            android:screenOrientation="portrait"/>
+    </application>
+</manifest>

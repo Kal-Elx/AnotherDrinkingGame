@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Ännu Ett Förfestspel</string>
+    <string name="start_party">Börja festen</string>
+    <string name="rules">Lär dig reglerna</string>
+    <string name="settings">Inställningar</string>
+    <string name="setup_textview">Vilka ska spela?</string>
+    <string name="enter_name">Namn</string>
+    <string name="no_player_name">En spelare måste ha ett namn</string>
+    <string name="player_counter">Spelare:</string>
+    <string name="done_with_players">Är du säker på att du lagt till alla?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string name="setup_relations_textview">Vilka dejtar?</string>
+    <string name="add_relations_hint">Välj en spelare</string>
+    <string name="couple_already_added">Paret har redan lagts till</string>
+    <string name="couple_counter">Par:</string>
+    <string name="done_with_couples">Är du säker på att det här är alla paren?</string>
+    <string name="done_no_couples">Är du säker på att det inte finns några par?</string>
+    <string name="not_couple">Du måste välja två spelare</string>
+    <string name="female">Tjej</string>
+    <string name="male">Kille</string>
+    <string name="other">Annat</string>
+    <string-array name="gender">
+        <item>Tjej</item>
+        <item>Kille</item>
+        <item>Annat</item>
+    </string-array>
+    <string name="NHIE_title">Jag har aldrig...</string>
+    <string name="PG_title">Pekleken</string>
+    <string name="next_question">Nästa fråga</string>
+    <string name="RYME_title">Rimma på...</string>
+    <string name="CATEGORY_title">Följ kategorin:</string>
+    <string name="B2B_title">Rygg mot rygg</string>
+    <string name="NHIE">Jag har aldrig...</string>
+    <string name="PG">Pekleken</string>
+    <string name="RYME">Rim</string>
+    <string name="CATEGORY">Kategori</string>
+    <string name="B2B">Rygg mot rygg</string>
+    <string name="MISSION">Uppdrag</string>
+    <string name="show_question"><u>Visa fråga</u></string>
+    <string name="show_mission"><u>Visa uppdrag</u></string>
+    <string name="MISSION_title">Uppdrag till</string>
+    <string name="MISSION_secret_title">Hemligt uppdrag till</string>
+    <string name="ok">OK</string>
+    <string name="not_enough_players">Det måste vara minst två spelare för att spelet ska kunna starta.</string>
+    <string name="player_name_not_unique">Ett spelarnamn måste vara unikt</string>
+    <string name="B2B_rules">De spelare vars namn visas på skärmen vänder ryggen mot varandra. Tryck sedan \"Visa fråga\" och läs upp frågan högt. Om någon av de två utvalda spelarna tycker att den själv är svaret på frågan ska den dricka. Om endast en av spelarna dricker klarades frågan och de resterande spelarna i gruppen måste även de dricka.</string>
+    <string name="NHIE_rules">Ett påstående som börjar på \"Jag har aldrig...\" visas på skärmen. De spelare som har gjort det påståendet handlar om ska dricka.</string>
+    <string name="PG_rules">En fråga visas på skärmen. Alla spelare pekar på den som de tycker är svaret på frågan. Den spelare flest pekar på dricker.</string>
+    <string name="MISSION_secret_rules">Spelaren som uppdraget är riktat till ska själv trycka på \"visa uppdrag\", läsa uppdraget, hålla det hemligt under resten av spelet och utföra uppdraget enligt anvisningarna.</string>
+    <string name="MISSION_not_secret_rules">Ett uppdrag visas på skärmen. Den spelare som uppdraget är riktat till ska utföra uppdraget enligt anvisningarna.</string>
+    <string name="MISSION_rules">Ett uppdrag visas på skärmen. Den spelare som uppdraget är riktat till ska utföra uppdraget enligt anvisningarna.\nOm uppdraget är hemligt ska spelaren som uppdraget är riktat till själv trycka på \"visa uppdrag\", läsa uppdraget och hålla det hemligt.</string>
+    <string name="RYME_rules">Spelaren vars namn visas ska börja att rimma. När en spelare har rimmat är det spelaren till vänsters tur att rimma på samma ord. Turen fortsätter åt vänster tills en spelare inte kommer på något mer ord som rimmar eller säger ett ord som redan sagts. Den spelare som inte kom på något nytt ord dricker.</string>
+    <string name="CATEGORY_rules">Spelaren vars namn visas ska börja att säga något som följer kategorin. När en spelare har sagt något som följer kategorin är det spelaren till vänsters tur att säga något annat som också tillhör kategorin. Turen fortsätter till vänster tills en spelare inte kommer på något mer som följer kategorin eller säger något som redan sagts. Den spelare som inte kom på något nytt som följer kategorin dricker.</string>
+    <string name="game_rules">Välkommen till Ännu Ett Förfestspel!\n\nNedan följer två enkla spelregler som står över alla andra.\n1. När en spelare uppmanas att dricka är det spelaren själv som väljer vad och hur mycket den vill dricka. Kom ihåg, vatten är sexigt.\n2. Om en spelare uppmanas att göra något som denne inte vill ska spelaren säga det och då inte behöva göra det. Detta kan t.ex. vara att svara på en fråga, utföra ett uppdrag eller att dricka.\n
+    \nSpelet består av sex mini-spel som frågor och uppdrag blandas ifrån. Nedan följer dessa mini-spel med tillhörande regler. Notera att reglerna alltid kan hittas under spelets gång genom att trycka på informationssymbolen i det övre högra hörnet av skärmen.</string>
+    <string name="finnish_game">Är du säker på att du vill avsluta spelet?</string>
+    <string name="add_relations_instructions">Lägg till par genom att välja deras namn i listorna och klicka på + i den högra delen av skärmen.\n\nNär alla par lagts till trycker du på bocken i det övre högra hörnet av skärmen.\n\nInformation om vilka som dejtar används för att ge en bättre spelupplevelse med frågor anpassade till spelarna.</string>
+    <string name="add_players_instructions">Lägg till spelare genom att skriva in dess namn, välja kön på spelaren och klicka på + till höger om namnet.\n\nNär alla spelare lagts till trycker du på bocken i det övre högra hörnet av skärmen.\n\nInformation om spelarens kön används för att ge en bättre spelupplevelse genom frågor anpassade till spelaren.</string>
+    <string name="instructions">Instruktioner</string>
+    <string name="no_relation_to_self">En spelare kan inte dejta sig själv</string>
+    <string name="done">Klar</string>
+    <string name="information">Information</string>
+    <string name="settings_title">Vilka spel vill ni ha med?</string>
+    <string name="settings_one_checked">Minst ett spel måste vara valt</string>
+    <string name="relations_spinner_default">\-</string>
+    <string name="drink_responsibly">Drick ansvarsfullt</string>
+    <string name="warning_message">All användning av denna applikation sker på egen risk. Utgivaren frånsäger sig allt ansvar gällande de konsvekvenser som kan uppstå. Genom att fortsätta godkänner ni att alla i gruppen har tagit del av dessa villkor och att ni själva är ansvariga för eventuella konsekvenser.</string>
+    <string name="continue_to_game">Fortsätt</string>
+    <string name="close">Avsluta</string>
+    <string name="MISSION_secret">Hemligt uppdrag</string>
+</resources>

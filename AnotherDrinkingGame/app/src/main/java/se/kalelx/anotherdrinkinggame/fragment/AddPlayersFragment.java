@@ -81,7 +81,7 @@ public class AddPlayersFragment extends SetupFragment {
                 if (name.length() > 0 && nameNotTaken(name)) {
                     mPlayers.add(0, new Player(name, getGender()));
                     mNameInput.getText().clear();
-                    updateUi();
+                    updateUI();
                 } else {
                     int message;
                     if (name.length() > 0) {
@@ -95,7 +95,7 @@ public class AddPlayersFragment extends SetupFragment {
             }
         });
 
-        updateUi();
+        updateUI();
 
         return v;
     }
@@ -121,7 +121,7 @@ public class AddPlayersFragment extends SetupFragment {
         }
     }
 
-    private void updateUi() {
+    private void updateUI() {
         mPlayerCounterTextView.setText(getString(R.string.player_counter)+ " " + mPlayers.size());
         if (mAdapter == null) {
             mAdapter = new Adapter(mPlayers);
@@ -147,15 +147,15 @@ public class AddPlayersFragment extends SetupFragment {
         Holder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.setup_viewholder, parent, false));
             mPlayerName = itemView.findViewById(R.id.name_textview);
+            mGenderImageView = itemView.findViewById(R.id.gender_image_view);
             mDeleteButton = itemView.findViewById(R.id.delete_button);
             mDeleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mPlayers.remove(mPlayer);
-                    updateUi();
+                    updateUI();
                 }
             });
-            mGenderImageView = itemView.findViewById(R.id.gender_image_view);
         }
 
         void bind(Player player) {
@@ -168,6 +168,8 @@ public class AddPlayersFragment extends SetupFragment {
                 case MALE:
                     mGenderImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_masculine));
                     break;
+                case OTHER:
+                    mGenderImageView.setImageResource(android.R.color.transparent);
             }
         }
     }

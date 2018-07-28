@@ -1,6 +1,7 @@
 package se.kalelx.anotherdrinkinggame.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -46,9 +47,26 @@ public abstract class QuestionFragment extends Fragment {
             case R.id.information_icon:
                 showRulesDialog();
                 return true;
+            case R.id.edit_players_icon:
+                showEditPlayersDialog();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showEditPlayersDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(R.string.edit_players_message);
+        builder.setTitle(R.string.edit_players_title);
+        builder.setPositiveButton(R.string.continue_to_game, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mCallbacks.editPlayers();
+            }
+        });
+        builder.setNegativeButton(R.string.go_back, null);
+        builder.create().show();
     }
 
     private void showRulesDialog() {

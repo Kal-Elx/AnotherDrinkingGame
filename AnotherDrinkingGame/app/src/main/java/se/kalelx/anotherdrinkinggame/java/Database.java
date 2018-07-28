@@ -29,6 +29,7 @@ public class Database {
     private List<Question> mMissionMale = new ArrayList<>();
     private List<Question> mMissionCouple = new ArrayList<>();
     private List<Question> mMissionGeneral = new ArrayList<>();
+    private List<Question> mPreviousMissions = new ArrayList<>();
     private int mNumberOfFemales;
     private int mNumberOfMales;
     private final Random mRandomGenerator = new Random();
@@ -56,6 +57,10 @@ public class Database {
         mMales = new ArrayList<>();
     }
 
+    public void reset() {
+        sDatabase = null;
+    }
+
     public void createQuestions() {
         getInformationAboutPlayers();
 
@@ -74,6 +79,11 @@ public class Database {
         if (userWantsCATEGORY) {
             createCategories();
         }
+        addMissions();
+        countQuestions();
+    }
+
+    private void addMissions() {
         if (userWantsMISSION) {
             createMissions();
             if (mNumberOfFemales >= 1) {
@@ -93,7 +103,6 @@ public class Database {
                 createMissionsWithMalesForMales();
             }
         }
-        countQuestions();
     }
 
     private void countQuestions() {
@@ -146,13 +155,23 @@ public class Database {
 
         if (questions.size() > 0) {
             int index = mRandomGenerator.nextInt(questions.size());
-            remove(questions.get(index));
+            Question question = questions.get(index);
+            remove(question);
+            if (isMission(question)) {
+                mPreviousMissions.add(question);
+            }
             return questions.get(index);
         } else {
             // Reset all questions
+            mPreviousMissions.clear();
             createQuestions();
             return getQuestionFor(player);
         }
+    }
+
+    private boolean isMission(Question question) {
+        QuestionType qt = question.getType();
+        return qt == MISSION_GENERAL || qt == MISSION_MALE || qt == MISSION_FEMALE || qt == MISSION_COUPLE;
     }
 
     private void remove(Question q) {
@@ -234,6 +253,20 @@ public class Database {
         return duplicatedList.get(index).getName();
     }
 
+    /*
+    Removes couples with players that have been removed.
+    Used when players are edited during game.
+     */
+    public void cleanCouples() {
+        List<Couple> notValidCouples = new ArrayList<>();
+        for (Couple c : mCouples) {
+            if (!mPlayers.contains(c.getPlayer1()) || !mPlayers.contains(c.getPlayer2())) {
+                notValidCouples.add(c);
+            }
+        }
+        mCouples.removeAll(notValidCouples);
+    }
+
     public void clearQuestions() {
         mNeverHaveIEverQuestestions.clear();
         mPointToQuestions.clear();
@@ -253,13 +286,33 @@ public class Database {
         return mPlayers;
     }
 
-    public void setPlayers(List<Player> players) {
-        mPlayers = players;
+    public void allPlayersAdded() {
         for (Player player : mPlayers) {
             if (player.getGender() == Gender.FEMALE) {
                 mFemales.add(player);
             } else if (player.getGender() == Gender.MALE) {
                 mMales.add(player);
+            }
+        }
+    }
+
+    public void playersEdited() {
+        getInformationAboutPlayers();
+        addMissions();
+        for (Question q : mPreviousMissions) {
+            switch (q.getType()) {
+                case MISSION_GENERAL:
+                    mMissionGeneral.remove(q);
+                    break;
+                case MISSION_COUPLE:
+                    mMissionMale.remove(q);
+                    break;
+                case MISSION_FEMALE:
+                    mMissionFemale.remove(q);
+                    break;
+                case MISSION_MALE:
+                    mMissionMale.remove(q);
+                    break;
             }
         }
     }
@@ -279,6 +332,10 @@ public class Database {
 
     public List<Player> getMales() {
         return mMales;
+    }
+
+    public List<Couple> getCouples() {
+        return mCouples;
     }
 
     public void setCouples(List<Couple> couples) {
@@ -449,7 +506,7 @@ public class Database {
         add("fått blommor av min partner.", t);
         add("använt en sexleksak.", t);
         add("dejtat flera personer samtidigt.", t);
-        add("loggat in på ett ex konto på något socialt medium.", t);
+        add("loggat in på ett ex konto på något socialt medie.", t);
         add("ljugit för min chef.", t);
         add("gett eller fått ett sugmärke.", t);
         add("blivit full ensam.", t);
@@ -461,8 +518,8 @@ public class Database {
         add("använt någon annans tandborste.", t);
         add("haft en pregnancy scare.", t);
         add("fejkat en orgasm.", t);
-        add("missat en VM-final i fotboll.", t);
-        add("hoppat från 10:an.", t);
+        add("spelat strippoker.", t);
+        add("druckit fulvin.", t);
         //add(".", t);
     }
 
@@ -536,6 +593,7 @@ public class Database {
         add("Vem har snyggast tatuering?", t);
         add("Vem har haft den värsta karatefyllan?", t);
         add("Vem skulle lyckas bäst som politiker?", t);
+        add("Vem är sämst på geografi?", t);
         //add("Vem ?", t);
     }
 
@@ -586,7 +644,7 @@ public class Database {
         add("Vem bestämmer mest över vad den andra har på sig?", B2B_COUPLE);
         add("Vem har mest sex?", B2B_GENERAL);
         add("Vem onanerar mest?", B2B_GENERAL);
-        add("Vem är bäst på dirt talk?", B2B_COUPLE);
+        add("Vem är bäst på dirty talk?", B2B_COUPLE);
         add("Vem har äckligast fötter?", B2B_COUPLE);
         add("Vem är mest kräsen?", B2B_GENERAL);
         add("Vem tindrar mest?", B2B_GENERAL);
@@ -608,25 +666,22 @@ public class Database {
         add("Hår", t);
         add("Öl", t);
         add("Vin", t);
-        add("Rumpa", t);
+        add("Skumpa", t);
         add("Hoppa", t);
         add("Fest", t);
-        add("Pub", t);
-        add("Kul", t);
         add("Hus", t);
         add("Sprit", t);
-        add("Sex", t);
         add("Dans", t);
         add("Spel", t);
         add("Flaska", t);
         add("Full", t);
         add("Ljuga", t);
         add("Drake", t);
-        add("Plunta", t);
-        add("Skura", t);
+        add("Mat", t);
         add("Ung", t);
-        add("Åtta", t);
         add("Bar", t);
+        add("Sång", t);
+        add("Boll", t);
         //add("", t);
     }
 
@@ -639,7 +694,7 @@ public class Database {
         add("Fotbollslag", t);
         add("Bilmärken", t);
         add("Filmer med Leonardo DiCaprio", t);
-        add("Ölsorter", t);
+        add("Ölmärken", t);
         add("Paradise Hotel-deltagare", t);
         add("Klädmärken", t);
         add("Influencers", t);
@@ -656,7 +711,7 @@ public class Database {
         add("Rappare", t);
         add("Artister som sjunger på svenska", t);
         add("Pojkband", t);
-        add("Vinsorter", t);
+        add("Vinmärken", t);
         add("Podcasts", t);
         add("Skådespelare", t);
         add("Smink- och hårproduktsmärken", t);

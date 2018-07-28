@@ -18,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import se.kalelx.anotherdrinkinggame.R;
@@ -30,11 +29,11 @@ public class RelationsFragment extends SetupFragment {
 
     private ImageButton mAddButton;
     private TextView mCoupleCounterTextView;
-    private RecyclerView mPlayersList;
+    private RecyclerView mCouplesList;
     private Adapter mAdapter;
     private Spinner mSpinner1;
     private Spinner mSpinner2;
-    private final List<Couple> mCouples = new ArrayList<>();
+    private List<Couple> mCouples;
     private Database mDatabase;
     private List<Player> mPlayers;
     private Player mDefaultPlayer;
@@ -57,6 +56,7 @@ public class RelationsFragment extends SetupFragment {
         mPlayers = mDatabase.getPlayers();
         mDefaultPlayer = new Player(getString(R.string.relations_spinner_default), null);
         mPlayers.add(mDefaultPlayer);
+        mCouples = mDatabase.getCouples();
 
         mCoupleCounterTextView = v.findViewById(R.id.couple_counter_textview);
         mAddButton = v.findViewById(R.id.add_relation_button);
@@ -71,10 +71,11 @@ public class RelationsFragment extends SetupFragment {
                 if (!player1.equals(player2)) {
                     Couple couple = new Couple(player1, player2);
                     if (!mCouples.contains(couple)) {
-                        mCouples.add(couple);
+                        mCouples.add(0, couple);
                         player1.setDating();
                         player2.setDating();
                         updateCoupleCounter();
+                        updateUI();
                     } else {
                         Toast.makeText(getActivity(), R.string.couple_already_added, Toast.LENGTH_LONG).show();
                     }
@@ -84,8 +85,8 @@ public class RelationsFragment extends SetupFragment {
                 clearSpinners();
             }
         });
-        mPlayersList = v.findViewById(R.id.player_relations_recyclerview);
-        mPlayersList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mCouplesList = v.findViewById(R.id.player_relations_recyclerview);
+        mCouplesList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mSpinner1 = v.findViewById(R.id.spinner1);
         mSpinner2 = v.findViewById(R.id.spinner2);
@@ -134,7 +135,7 @@ public class RelationsFragment extends SetupFragment {
     private void updateUI() {
          if (mAdapter == null) {
              mAdapter = new Adapter(mCouples);
-             mPlayersList.setAdapter(mAdapter);
+             mCouplesList.setAdapter(mAdapter);
          } else {
              mAdapter.setCouples(mCouples);
              mAdapter.notifyDataSetChanged();
@@ -225,13 +226,17 @@ public class RelationsFragment extends SetupFragment {
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mPlayers.remove(mDefaultPlayer);
-                mDatabase.setCouples(mCouples);
+                prepareForClose();
                 mCallbacks.onAllRelationsAdded();
             }
         });
         builder.setNegativeButton(R.string.no, null);
         builder.create().show();
+    }
+
+    private void prepareForClose() {
+        mPlayers.remove(mDefaultPlayer);
+        mDatabase.setCouples(mCouples);
     }
 
     private String getListWithCouples() {
@@ -240,5 +245,11 @@ public class RelationsFragment extends SetupFragment {
             builder.append("\n" + c.toString());
         }
         return builder.toString();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        prepareForClose();
     }
 }

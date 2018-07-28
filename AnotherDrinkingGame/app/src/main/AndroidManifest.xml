@@ -35,5 +35,9 @@
         <activity android:name="se.kalelx.anotherdrinkinggame.activity.QuestionActivity"
             android:label=""
             android:screenOrientation="portrait"/>
+        <activity android:name="se.kalelx.anotherdrinkinggame.activity.EditActivity"
+            android:screenOrientation="portrait"
+            android:label=""
+            android:noHistory="true" />
     </application>
 </manifest>

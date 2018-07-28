@@ -35,6 +35,14 @@ public class Couple {
                 Objects.equals(mPlayer2, couple.mPlayer1) && Objects.equals(mPlayer1, couple.mPlayer2);
     }
 
+    public Player getPlayer1() {
+        return mPlayer1;
+    }
+
+    public Player getPlayer2() {
+        return mPlayer2;
+    }
+
     @Override
     public int hashCode() {
 

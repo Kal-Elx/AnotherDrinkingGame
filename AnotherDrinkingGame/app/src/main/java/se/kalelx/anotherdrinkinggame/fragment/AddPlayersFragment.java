@@ -20,7 +20,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import se.kalelx.anotherdrinkinggame.R;
@@ -37,6 +36,7 @@ public class AddPlayersFragment extends SetupFragment {
     private RecyclerView mPlayerList;
     private Adapter mAdapter;
     private List<Player> mPlayers;
+    private Database mDatabase;
 
 
     public static AddPlayersFragment newInstance() {
@@ -53,7 +53,8 @@ public class AddPlayersFragment extends SetupFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_add_players, container, false);
 
-        mPlayers = new ArrayList<>();
+        mDatabase = Database.get(getActivity());
+        mPlayers = mDatabase.getPlayers();
 
         mPlayerList = v.findViewById(R.id.player_recyclerview);
         mPlayerList.setLayoutManager(new GridLayoutManager(getActivity(), 2));
@@ -62,7 +63,7 @@ public class AddPlayersFragment extends SetupFragment {
         mNameInput.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                if (actionId == EditorInfo.IME_ACTION_NEXT) {
                     mAddButton.performClick();
                     return true;
                 }
@@ -235,7 +236,7 @@ public class AddPlayersFragment extends SetupFragment {
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Database.get(getActivity()).setPlayers(mPlayers);
+                mDatabase.allPlayersAdded();
                 mCallbacks.onAllPlayersAdded();
             }
         });

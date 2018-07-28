@@ -69,4 +69,9 @@
     <string name="continue_to_game">Fortsätt</string>
     <string name="close">Avsluta</string>
     <string name="MISSION_secret">Hemligt uppdrag</string>
+    <string name="edit_players">Redigera spelare</string>
+    <string name="edit_players_message">Vill ni redigera spelets deltagare och deras relationer?\nNi kommer att kunna återuppta spelet efter redigeringen.</string>
+    <string name="edit_players_title">Redigera spelare</string>
+    <string name="go_back">Tillbaka</string>
+    <string name="go_back_not_possible">Färdigställ redigeringen av spelare innan du kan återvända till spelet.\nDu gör det genom att trycka på bocken i det övre högra hörnet av skärmen.</string>
 </resources>

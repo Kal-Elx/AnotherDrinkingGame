@@ -148,4 +148,10 @@ public class QuestionActivity extends AppCompatActivity implements QuestionCallb
     public void nextQuestion() {
         showQuestion();
     }
+
+    @Override
+    public void editPlayers() {
+        Intent intent = EditActivity.newIntent(this);
+        startActivity(intent);
+    }
 }

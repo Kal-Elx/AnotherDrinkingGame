@@ -9,4 +9,11 @@
         app:showAsAction="ifRoom|never">
     </item>
 
+    <item
+        android:id="@+id/edit_players_icon"
+        android:title="@string/edit_players"
+        android:icon="@drawable/edit_players"
+        app:showAsAction="ifRoom|never">
+    </item>
+
 </menu>

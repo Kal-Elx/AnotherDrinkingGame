@@ -16,12 +16,6 @@ public class EditActivity extends SetupActivity {
     }
 
     @Override
-    public void onAllPlayersAdded() {
-        super.onAllPlayersAdded();
-        mDatabase.cleanCouples();
-    }
-
-    @Override
     public void onAllRelationsAdded() {
         mDatabase.playersEdited();
         this.finish();

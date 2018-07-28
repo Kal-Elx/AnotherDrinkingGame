@@ -15,6 +15,7 @@ import se.kalelx.anotherdrinkinggame.R;
 import se.kalelx.anotherdrinkinggame.fragment.AddPlayersFragment;
 import se.kalelx.anotherdrinkinggame.fragment.RelationsFragment;
 import se.kalelx.anotherdrinkinggame.fragment.SetupFragment;
+import se.kalelx.anotherdrinkinggame.java.Database;
 
 public class SetupActivity extends AppCompatActivity implements SetupFragment.Callbacks {
 
@@ -41,6 +42,7 @@ public class SetupActivity extends AppCompatActivity implements SetupFragment.Ca
         if (findViewById(R.id.fragment_container) != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, RelationsFragment.newInstance()).commit();
         }
+        Database.get(this).cleanCouples();
     }
 
     @Override

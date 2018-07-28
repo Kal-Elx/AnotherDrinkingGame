@@ -129,14 +129,13 @@ public class QuestionActivity extends AppCompatActivity implements QuestionCallb
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //if user pressed "yes", then he is allowed to exit from application
+                mDatabase.clearQuestions();
                 finish();
             }
         });
         builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //if user select "No", just cancel this dialog and continue with app
                 dialog.cancel();
             }
         });

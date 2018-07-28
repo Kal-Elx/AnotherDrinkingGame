@@ -80,7 +80,7 @@ public class Database {
             createCategories();
         }
         addMissions();
-        countQuestions();
+        //countQuestions();
     }
 
     private void addMissions() {

@@ -24,6 +24,7 @@ import se.kalelx.anotherdrinkinggame.R;
 import se.kalelx.anotherdrinkinggame.java.Couple;
 import se.kalelx.anotherdrinkinggame.java.Database;
 import se.kalelx.anotherdrinkinggame.java.Player;
+import se.kalelx.anotherdrinkinggame.java.RelationshipStatus;
 
 public class RelationsFragment extends SetupFragment {
 
@@ -72,8 +73,8 @@ public class RelationsFragment extends SetupFragment {
                     Couple couple = new Couple(player1, player2);
                     if (!mCouples.contains(couple)) {
                         mCouples.add(0, couple);
-                        player1.setDating();
-                        player2.setDating();
+                        player1.setRelationshipStatus(RelationshipStatus.DATING);
+                        player2.setRelationshipStatus(RelationshipStatus.DATING);
                         updateCoupleCounter();
                         updateUI();
                     } else {
@@ -156,6 +157,24 @@ public class RelationsFragment extends SetupFragment {
                 @Override
                 public void onClick(View v) {
                     mCouples.remove(mCouple);
+                    Player player1 = mCouple.getPlayer1();
+                    Player player2 = mCouple.getPlayer2();
+                    boolean player1IsSingle = true;
+                    boolean player2IsSingle = true;
+                    for (Couple c : mCouples) {
+                        if (c.playerInCouple(player1)) {
+                            player1IsSingle = false;
+                        }
+                        if (c.playerInCouple(player2)) {
+                            player2IsSingle = false;
+                        }
+                    }
+                    if (player1IsSingle) {
+                        player1.setRelationshipStatus(RelationshipStatus.SINGLE);
+                    }
+                    if (player2IsSingle) {
+                        player2.setRelationshipStatus(RelationshipStatus.SINGLE);
+                    }
                     updateCoupleCounter();
                     updateUI();
                 }

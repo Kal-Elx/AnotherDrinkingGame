@@ -24,8 +24,8 @@ public class Player {
         return mRelationshipStatus == RelationshipStatus.SINGLE;
     }
 
-    public void setDating() {
-        mRelationshipStatus = RelationshipStatus.DATING;
+    public void setRelationshipStatus(RelationshipStatus status) {
+        mRelationshipStatus = status;
     }
 
     @Override

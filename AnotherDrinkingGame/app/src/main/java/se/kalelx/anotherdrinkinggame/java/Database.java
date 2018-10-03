@@ -80,7 +80,7 @@ public class Database {
             createCategories();
         }
         addMissions();
-        //countQuestions();
+        countQuestions();
     }
 
     private void addMissions() {
@@ -520,6 +520,11 @@ public class Database {
         add("fejkat en orgasm.", t);
         add("spelat strippoker.", t);
         add("druckit fulvin.", t);
+        add("använt en raggningsreplik jag läst på internet.", t);
+        add("filmat när jag haft sex.", t);
+        add("vaknat upp någonstans och inte vetat var jag är.", t);
+        add("Dejtat någon som varit tio år äldre än mig.", t);
+        add("Dejtat någon som varit fem år yngre än mig.", t);
         //add(".", t);
     }
 
@@ -594,6 +599,8 @@ public class Database {
         add("Vem har haft den värsta karatefyllan?", t);
         add("Vem skulle lyckas bäst som politiker?", t);
         add("Vem är sämst på geografi?", t);
+        add("Vem skulle du helst ha som wingman?", t);
+        add("Vem kommer gifta sig rik?", t);
         //add("Vem ?", t);
     }
 
@@ -644,6 +651,7 @@ public class Database {
         add("Vem bestämmer mest över vad den andra har på sig?", B2B_COUPLE);
         add("Vem har mest sex?", B2B_GENERAL);
         add("Vem onanerar mest?", B2B_GENERAL);
+        add("Vem raggar på yngst personer?", B2B_GENERAL);
         add("Vem är bäst på dirty talk?", B2B_COUPLE);
         add("Vem har äckligast fötter?", B2B_COUPLE);
         add("Vem är mest kräsen?", B2B_GENERAL);
@@ -651,6 +659,9 @@ public class Database {
         add("Vem har äckligast morgonandedräkt?", B2B_COUPLE);
         add("Vem har bäst inredningssmak?", B2B_COUPLE);
         add("Vem har störst \"fötter\"?", B2B_MALE);
+        add("Vem kommer gifta sig först", B2B_GENERAL);
+        add("Vem är mest mån om sitt utseende?", B2B_GENERAL);
+        add("Vem är snabbast?", B2B_GENERAL);
         //add("", B2B_);
     }
 
@@ -736,6 +747,8 @@ public class Database {
         add("Drinkar", t);
         add("Mobiltillverkare", t);
         add("TV-/Datorspel", t);
+        add("Porrstjärnor", t);
+        add("Ord som slutar på -ist", t);
         //add("", t);
     }
 
@@ -785,6 +798,8 @@ public class Database {
         add("Varje gång *A* dricker måste du också dricka. Detta gäller tills du får ett nytt uppdrag.", MISSION_GENERAL);
         add("Prata som Arnold Schwarzenegger tills du får ett nytt uppdrag.", MISSION_GENERAL);
         add("{S}Ge ut uppdraget till valfri person att stava Arnold Schwarzeneggers efternamn. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
+        add("Utse gruppens Party Dog. Denna person måste yla varje gång den druckit upp sin dricka.", MISSION_GENERAL);
+        add("Drick varje gång *A* dricker. Uppdraget gäller i en kvart.", MISSION_GENERAL);
     }
 
     /*
@@ -795,6 +810,7 @@ public class Database {
         QuestionType t = MISSION_MALE;
         add("{S}Kalla *F* för min drottning under resten av kvällen.", t);
         add("Ditt namn är nu Jeeves. Agera butler åt *F*. Uppdraget är över när hon kallar dig för ditt riktiga namn", t);
+        add("Debattera med *F* om vad som gör ondast, att föda barn eller bli slagen mellan benen. Gruppen utser vinnaren som slipper dricka.", t);
     }
 
     private void createMissionsWithMalesForFemales() {

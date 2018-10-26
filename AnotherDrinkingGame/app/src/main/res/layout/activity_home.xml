@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
@@ -63,6 +63,18 @@
             android:clickable="true"
             android:focusable="true"
             android:text="@string/settings"
+            android:textColor="@drawable/button_text_color_white" />
+
+        <Button
+            android:id="@+id/send_questions_button"
+            style="@style/Button_start_screen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/send_questions"
             android:textColor="@drawable/button_text_color_white" />
 
     </LinearLayout>

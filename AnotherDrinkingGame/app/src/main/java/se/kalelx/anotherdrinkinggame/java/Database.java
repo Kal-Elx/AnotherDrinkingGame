@@ -23,7 +23,7 @@ public class Database {
     private List<Question> mBackToBackMaleQuestions = new ArrayList<>();
     private List<Question> mBackToBackCoupleQuestions = new ArrayList<>();
     private List<Question> mBackToBackGeneralQuestions = new ArrayList<>();
-    private List<Question> mRymes = new ArrayList<>();
+    private List<Question> mRhymes = new ArrayList<>();
     private List<Question> mCategories = new ArrayList<>();
     private List<Question> mMissionFemale = new ArrayList<>();
     private List<Question> mMissionMale = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Database {
     private boolean userWantsB2B = true;
     private boolean userWantsMISSION = true;
     private boolean userWantsCATEGORY = true;
-    private boolean userWantsRYME = true;
+    private boolean userWantsRHYME = true;
 
     public static Database get(Context context) {
         if (sDatabase == null) {
@@ -73,8 +73,8 @@ public class Database {
         if (userWantsB2B) {
             createBackToBackQuestions();
         }
-        if (userWantsRYME) {
-            createRymes();
+        if (userWantsRHYME) {
+            createRhymes();
         }
         if (userWantsCATEGORY) {
             createCategories();
@@ -110,7 +110,7 @@ public class Database {
         System.out.println("Pekleken: " + mPointToQuestions.size());
         System.out.println("Rygg mot rygg: " + (mBackToBackCoupleQuestions.size() + mBackToBackGeneralQuestions.size() + mBackToBackFemaleQuestions.size() + mBackToBackMaleQuestions.size()));
         System.out.println("Uppdrag: " + (mMissionGeneral.size() + mMissionCouple.size() + mMissionFemale.size() + mMissionMale.size()));
-        System.out.println("Rim: " + mRymes.size());
+        System.out.println("Rim: " + mRhymes.size());
         System.out.println("Kategori: " + mCategories.size());
     }
 
@@ -133,7 +133,7 @@ public class Database {
         questions.addAll(mNeverHaveIEverQuestestions);
         questions.addAll(mPointToQuestions);
         questions.addAll(mBackToBackGeneralQuestions);
-        questions.addAll(mRymes);
+        questions.addAll(mRhymes);
         questions.addAll(mCategories);
         questions.addAll(mMissionGeneral);
 
@@ -194,8 +194,8 @@ public class Database {
             case B2B_MALE:
                 mBackToBackMaleQuestions.remove(q);
                 break;
-            case RYME:
-                mRymes.remove(q);
+            case RHYME:
+                mRhymes.remove(q);
                 break;
             case CATEGORY:
                 mCategories.remove(q);
@@ -274,7 +274,7 @@ public class Database {
         mBackToBackMaleQuestions.clear();
         mBackToBackCoupleQuestions.clear();
         mBackToBackGeneralQuestions.clear();
-        mRymes.clear();
+        mRhymes.clear();
         mCategories.clear();
         mMissionFemale.clear();
         mMissionMale.clear();
@@ -382,12 +382,12 @@ public class Database {
         this.userWantsCATEGORY = userWantsCATEGORY;
     }
 
-    public boolean getSwitchStatusForRYME() {
-        return userWantsRYME;
+    public boolean getSwitchStatusForRHYME() {
+        return userWantsRHYME;
     }
 
-    public void setSwitchStatusForRYME(boolean userWantsRYME) {
-        this.userWantsRYME = userWantsRYME;
+    public void setSwitchStatusForRHYME(boolean userWantsRHYME) {
+        this.userWantsRHYME = userWantsRHYME;
     }
 
     private void add(String question, QuestionType type) {
@@ -411,8 +411,8 @@ public class Database {
             case B2B_MALE:
                 mBackToBackMaleQuestions.add(q);
                 break;
-            case RYME:
-                mRymes.add(q);
+            case RHYME:
+                mRhymes.add(q);
                 break;
             case CATEGORY:
                 mCategories.add(q);
@@ -668,9 +668,9 @@ public class Database {
     /*
     Grammar: Start with capital letter, no dot.
      */
-    private void createRymes() {
-        mRymes = new ArrayList<>();
-        QuestionType t = RYME;
+    private void createRhymes() {
+        mRhymes = new ArrayList<>();
+        QuestionType t = RHYME;
         add("Arm", t);
         add("Hus", t);
         add("Lax", t);
@@ -680,7 +680,6 @@ public class Database {
         add("Skumpa", t);
         add("Hoppa", t);
         add("Fest", t);
-        add("Hus", t);
         add("Sprit", t);
         add("Dans", t);
         add("Spel", t);
@@ -810,7 +809,6 @@ public class Database {
         QuestionType t = MISSION_MALE;
         add("{S}Kalla *F* för min drottning under resten av kvällen.", t);
         add("Ditt namn är nu Jeeves. Agera butler åt *F*. Uppdraget är över när hon kallar dig för ditt riktiga namn", t);
-        add("Debattera med *F* om vad som gör ondast, att föda barn eller bli slagen mellan benen. Gruppen utser vinnaren som slipper dricka.", t);
     }
 
     private void createMissionsWithMalesForFemales() {
@@ -831,12 +829,22 @@ public class Database {
     }
 
     private void createMissionsWithMalesForAll() {
-        QuestionType t = MISSION_GENERAL;
+        QuestionType t;
+        if (mMales.size() > 1) {
+            t = MISSION_GENERAL;
+        } else {
+            t = MISSION_FEMALE;
+        }
         add("{S}Upprepa allt *M* säger tills han upptäckt vad du gör.", t);
     }
 
     private void createMissionsWithFemalesForAll() {
-        QuestionType t = MISSION_GENERAL;
+        QuestionType t;
+        if (mFemales.size() > 1) {
+            t = MISSION_GENERAL;
+        } else {
+            t = MISSION_MALE;
+        }
         add("{S}Ge *F* en komplimang varje gång du dricker tills hon säger att du ska sluta.", t);
     }
 }

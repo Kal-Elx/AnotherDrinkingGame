@@ -28,7 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/RYME_title" />
+            tools:text="@string/RHYME_title" />
 
         <TextView
             android:id="@+id/question_text_view"

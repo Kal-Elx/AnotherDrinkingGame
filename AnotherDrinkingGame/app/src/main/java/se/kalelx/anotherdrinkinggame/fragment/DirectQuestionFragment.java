@@ -30,8 +30,8 @@ public class DirectQuestionFragment extends QuestionFragment {
 
         int title = 0;
         switch (question.getType()) {
-            case RYME:
-                title = R.string.RYME_title;
+            case RHYME:
+                title = R.string.RHYME_title;
                 break;
             case CATEGORY:
                 title = R.string.CATEGORY_title;
@@ -82,8 +82,8 @@ public class DirectQuestionFragment extends QuestionFragment {
     private void changeColorOfButton() {
         int background = R.drawable.next_question_button;
         switch (mTitle) {
-            case R.string.RYME_title:
-                background = R.drawable.next_question_button_ryme;
+            case R.string.RHYME_title:
+                background = R.drawable.next_question_button_rhyme;
                 break;
             case R.string.CATEGORY_title:
                 background = R.drawable.next_question_button_category;
@@ -95,8 +95,8 @@ public class DirectQuestionFragment extends QuestionFragment {
     @Override
     protected int getRules() {
         switch (mTitle) {
-            case R.string.RYME_title:
-                return R.string.RYME_rules;
+            case R.string.RHYME_title:
+                return R.string.RHYME_rules;
             case R.string.CATEGORY_title:
                 return R.string.CATEGORY_rules;
             default:
@@ -107,8 +107,8 @@ public class DirectQuestionFragment extends QuestionFragment {
     @Override
     protected int getTitle() {
         switch (mTitle) {
-            case R.string.RYME_title:
-                return R.string.RYME;
+            case R.string.RHYME_title:
+                return R.string.RHYME;
             case R.string.CATEGORY_title:
                 return R.string.CATEGORY;
             default:

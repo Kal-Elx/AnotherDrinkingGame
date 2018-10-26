@@ -91,14 +91,14 @@
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:text="@string/RYME"/>
+                android:text="@string/RHYME"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:text="@string/RYME_rules"/>
+                android:text="@string/RHYME_rules"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,6 +115,13 @@
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:text="@string/MISSION_rules"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:text="\n"/>
 
         </LinearLayout>
     </ScrollView>

@@ -45,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void handleNoneIsChecked() {
         if (!(mDatabase.getSwitchStatusForNHIE() || mDatabase.getSwitchStatusForPG() || mDatabase.getSwitchStatusForB2B()
-                || mDatabase.getSwitchStatusForMISSION() || mDatabase.getSwitchStatusForCATEGORY() || mDatabase.getSwitchStatusForRYME())) {
+                || mDatabase.getSwitchStatusForMISSION() || mDatabase.getSwitchStatusForCATEGORY() || mDatabase.getSwitchStatusForRHYME())) {
             mSwitchNHIE.setChecked(true);
             Toast.makeText(this, R.string.settings_one_checked, Toast.LENGTH_SHORT).show();
         }
@@ -83,7 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
         mSwitchRYME.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mDatabase.setSwitchStatusForRYME(isChecked);
+                mDatabase.setSwitchStatusForRHYME(isChecked);
                 handleNoneIsChecked();
             }
         });
@@ -101,7 +101,7 @@ public class SettingsActivity extends AppCompatActivity {
         mSwitchPG.setChecked(mDatabase.getSwitchStatusForPG());
         mSwitchB2B.setChecked(mDatabase.getSwitchStatusForB2B());
         mSwitchMISSION.setChecked(mDatabase.getSwitchStatusForMISSION());
-        mSwitchRYME.setChecked(mDatabase.getSwitchStatusForRYME());
+        mSwitchRYME.setChecked(mDatabase.getSwitchStatusForRHYME());
         mSwitchCATEGORY.setChecked(mDatabase.getSwitchStatusForCATEGORY());
     }
 

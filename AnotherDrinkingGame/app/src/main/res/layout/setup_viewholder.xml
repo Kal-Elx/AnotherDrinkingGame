@@ -9,16 +9,16 @@
     <TextView
         android:id="@+id/name_textview"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start|center"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="casual"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/gender_image_view"
         app:layout_constraintEnd_toStartOf="@+id/gender_image_view"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gender_image_view"
         tools:text="name" />
 
     <ImageView

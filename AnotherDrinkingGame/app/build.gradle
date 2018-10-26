@@ -6,8 +6,8 @@ android {
         applicationId "se.kalelx.anotherdrinkinggame"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 7
-        versionName "1.4"
+        versionCode 9
+        versionName "1.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

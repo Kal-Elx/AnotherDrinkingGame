@@ -28,12 +28,12 @@
     <string name="NHIE_title">Jag har aldrig...</string>
     <string name="PG_title">Pekleken</string>
     <string name="next_question">Nästa fråga</string>
-    <string name="RYME_title">Rimma på...</string>
+    <string name="RHYME_title">Rimma på...</string>
     <string name="CATEGORY_title">Följ kategorin:</string>
     <string name="B2B_title">Rygg mot rygg</string>
     <string name="NHIE">Jag har aldrig...</string>
     <string name="PG">Pekleken</string>
-    <string name="RYME">Rim</string>
+    <string name="RHYME">Rim</string>
     <string name="CATEGORY">Kategori</string>
     <string name="B2B">Rygg mot rygg</string>
     <string name="MISSION">Uppdrag</string>
@@ -50,7 +50,7 @@
     <string name="MISSION_secret_rules">Spelaren som uppdraget är riktat till ska själv trycka på \"visa uppdrag\", läsa uppdraget, hålla det hemligt under resten av spelet och utföra uppdraget enligt anvisningarna.</string>
     <string name="MISSION_not_secret_rules">Ett uppdrag visas på skärmen. Den spelare som uppdraget är riktat till ska utföra uppdraget enligt anvisningarna.</string>
     <string name="MISSION_rules">Ett uppdrag visas på skärmen. Den spelare som uppdraget är riktat till ska utföra uppdraget enligt anvisningarna.\nOm uppdraget är hemligt ska spelaren som uppdraget är riktat till själv trycka på \"visa uppdrag\", läsa uppdraget och hålla det hemligt.</string>
-    <string name="RYME_rules">Spelaren vars namn visas ska börja att rimma. När en spelare har rimmat är det spelaren till vänsters tur att rimma på samma ord. Turen fortsätter åt vänster tills en spelare inte kommer på något mer ord som rimmar eller säger ett ord som redan sagts. Den spelare som inte kom på något nytt ord dricker.</string>
+    <string name="RHYME_rules">Spelaren vars namn visas ska börja att rimma. När en spelare har rimmat är det spelaren till vänsters tur att rimma på samma ord. Turen fortsätter åt vänster tills en spelare inte kommer på något mer ord som rimmar eller säger ett ord som redan sagts. Den spelare som inte kom på något nytt ord dricker.</string>
     <string name="CATEGORY_rules">Spelaren vars namn visas ska börja att säga något som följer kategorin. När en spelare har sagt något som följer kategorin är det spelaren till vänsters tur att säga något annat som också tillhör kategorin. Turen fortsätter till vänster tills en spelare inte kommer på något mer som följer kategorin eller säger något som redan sagts. Den spelare som inte kom på något nytt som följer kategorin dricker.</string>
     <string name="game_rules">Välkommen till Ännu Ett Förfestspel!\n\nNedan följer två enkla spelregler som står över alla andra.\n1. När en spelare uppmanas att dricka är det spelaren själv som väljer vad och hur mycket den vill dricka. Kom ihåg, vatten är sexigt.\n2. Om en spelare uppmanas att göra något som denne inte vill ska spelaren säga det och då inte behöva göra det. Detta kan t.ex. vara att svara på en fråga, utföra ett uppdrag eller att dricka.\n
     \nSpelet består av sex mini-spel som frågor och uppdrag blandas ifrån. Nedan följer dessa mini-spel med tillhörande regler. Notera att reglerna alltid kan hittas under spelets gång genom att trycka på informationssymbolen i det övre högra hörnet av skärmen.</string>
@@ -74,4 +74,6 @@
     <string name="edit_players_title">Redigera spelare</string>
     <string name="go_back">Tillbaka</string>
     <string name="go_back_not_possible">Färdigställ redigeringen av spelare innan du kan återvända till spelet.\nDu gör det genom att trycka på bocken i det övre högra hörnet av skärmen.</string>
+    <string name="add_couple">Lägg till par</string>
+    <string name="send_questions">Skicka in frågor</string>
 </resources>

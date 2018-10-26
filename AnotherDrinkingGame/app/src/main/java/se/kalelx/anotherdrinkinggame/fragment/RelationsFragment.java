@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -29,6 +31,7 @@ import se.kalelx.anotherdrinkinggame.java.RelationshipStatus;
 public class RelationsFragment extends SetupFragment {
 
     private ImageButton mAddButton;
+    private TextView mAddTextview;
     private TextView mCoupleCounterTextView;
     private RecyclerView mCouplesList;
     private Adapter mAdapter;
@@ -60,6 +63,7 @@ public class RelationsFragment extends SetupFragment {
         mCouples = mDatabase.getCouples();
 
         mCoupleCounterTextView = v.findViewById(R.id.couple_counter_textview);
+        mAddTextview = v.findViewById(R.id.add_relation_textview);
         mAddButton = v.findViewById(R.id.add_relation_button);
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,13 +88,37 @@ public class RelationsFragment extends SetupFragment {
                     Toast.makeText(getActivity(), R.string.no_relation_to_self, Toast.LENGTH_LONG).show();
                 }
                 clearSpinners();
+                mAddButton.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.add_circle_button));
+                mAddTextview.setVisibility(View.INVISIBLE);
             }
         });
         mCouplesList = v.findViewById(R.id.player_relations_recyclerview);
         mCouplesList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mSpinner1 = v.findViewById(R.id.spinner1);
+        mSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                handleAddButton();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //Do nothing
+            }
+        });
         mSpinner2 = v.findViewById(R.id.spinner2);
+        mSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                handleAddButton();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //Do nothing
+            }
+        });
         populateSpinners();
 
         updateUI();
@@ -109,6 +137,16 @@ public class RelationsFragment extends SetupFragment {
         mSpinner2.setAdapter(adapter);
 
         clearSpinners();
+    }
+
+    private void handleAddButton() {
+        Player player1 = (Player) mSpinner1.getSelectedItem();
+        Player player2 = (Player) mSpinner2.getSelectedItem();
+
+        if (player1.equals(mDefaultPlayer) || player2.equals(mDefaultPlayer)) return;
+
+        mAddButton.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.add_circle_button_green));
+        mAddTextview.setVisibility(View.VISIBLE);
     }
 
     private class ArrayAdapterBlankDefault extends ArrayAdapter {

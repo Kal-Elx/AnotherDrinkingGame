@@ -63,6 +63,7 @@ public class MissionFragment extends QuestionFragment {
         mMissionIsSecret = checkIfMissionIsSecret(question);
         if (mMissionIsSecret) {
             mTitleTextView.setText(R.string.MISSION_secret_title);
+            mTitleTextView.setTextSize(36);
             mQuestionTextView.setVisibility(View.INVISIBLE);
             mShowMissionButton.setOnClickListener(new View.OnClickListener() {
                 @Override

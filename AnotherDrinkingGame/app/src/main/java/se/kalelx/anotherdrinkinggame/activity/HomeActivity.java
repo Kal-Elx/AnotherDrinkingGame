@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button mStartButton;
     private Button mRulesButton;
     private Button mSettingsButton;
+    private Button mSendQuestionsButton;
 
     public static Intent newIntent(Context context) {
         Intent i = new Intent(context, HomeActivity.class);
@@ -49,6 +50,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = SettingsActivity.newIntent(HomeActivity.this);
+                startActivity(i);
+            }
+        });
+
+        mSendQuestionsButton = findViewById(R.id.send_questions_button);
+        mSendQuestionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = SendQuestionsActivity.newIntent(HomeActivity.this);
                 startActivity(i);
             }
         });

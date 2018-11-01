@@ -56,11 +56,7 @@ public class QuestionActivity extends AppCompatActivity implements QuestionCallb
 
     private void showQuestion() {
         int index = 0;
-        try {
-            index = mRandomGenerator.nextInt(mPlayers.size());
-        } catch (IllegalArgumentException e) {
-            finish();
-        }
+        index = mRandomGenerator.nextInt(mPlayers.size());
         mPlayerWithTurn = mPlayers.get(index);
         Question question = mDatabase.getQuestionFor(mPlayerWithTurn);
         int toolbarColor = 0;

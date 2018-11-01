@@ -265,6 +265,15 @@ public class Database {
             }
         }
         mCouples.removeAll(notValidCouples);
+
+        //Update relationship status for players
+        for (Player player : mPlayers) {
+            player.setRelationshipStatus(RelationshipStatus.SINGLE);
+        }
+        for (Couple c : mCouples) {
+            c.getPlayer1().setRelationshipStatus(RelationshipStatus.DATING);
+            c.getPlayer2().setRelationshipStatus(RelationshipStatus.DATING);
+        }
     }
 
     public void clearQuestions() {
@@ -298,14 +307,14 @@ public class Database {
 
     public void playersEdited() {
         getInformationAboutPlayers();
-        addMissions();
+        addMissions(); //Cleans missions
         for (Question q : mPreviousMissions) {
             switch (q.getType()) {
                 case MISSION_GENERAL:
                     mMissionGeneral.remove(q);
                     break;
                 case MISSION_COUPLE:
-                    mMissionMale.remove(q);
+                    mMissionCouple.remove(q);
                     break;
                 case MISSION_FEMALE:
                     mMissionFemale.remove(q);
@@ -523,8 +532,10 @@ public class Database {
         add("använt en raggningsreplik jag läst på internet.", t);
         add("filmat när jag haft sex.", t);
         add("vaknat upp någonstans och inte vetat var jag är.", t);
-        add("Dejtat någon som varit tio år äldre än mig.", t);
-        add("Dejtat någon som varit fem år yngre än mig.", t);
+        add("dejtat någon som varit tio år äldre än mig.", t);
+        add("dejtat någon som varit fem år yngre än mig.", t);
+        add("haft sönder en spegel.", t);
+        add("haft över 100 sekunder på min snap-story.", t);
         //add(".", t);
     }
 
@@ -799,6 +810,7 @@ public class Database {
         add("{S}Ge ut uppdraget till valfri person att stava Arnold Schwarzeneggers efternamn. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
         add("Utse gruppens Party Dog. Denna person måste yla varje gång den druckit upp sin dricka.", MISSION_GENERAL);
         add("Drick varje gång *A* dricker. Uppdraget gäller i en kvart.", MISSION_GENERAL);
+        add("Avsluta meningen: Om *A* skulle vara med i ett TV-program skulle det vara...", MISSION_GENERAL);
     }
 
     /*
@@ -825,7 +837,7 @@ public class Database {
 
     private void createMissionsWithFemalesForFemales() {
         QuestionType t = MISSION_FEMALE;
-        add("{S}Ta bilder med *F* varje chans du får under kvällen.", t);
+        add("{S}Ta bilder med *F* varje gång du får en chans under kvällen.", t);
     }
 
     private void createMissionsWithMalesForAll() {

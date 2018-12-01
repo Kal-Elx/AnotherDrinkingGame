@@ -25,7 +25,8 @@
         <activity android:name="se.kalelx.anotherdrinkinggame.activity.SetupActivity"
             android:screenOrientation="portrait"
             android:label=""
-            android:noHistory="true" />
+            android:noHistory="true"
+            android:parentActivityName="se.kalelx.anotherdrinkinggame.activity.HomeActivity"/>
         <activity android:name="se.kalelx.anotherdrinkinggame.activity.SettingsActivity"
             android:label=""
             android:screenOrientation="portrait"

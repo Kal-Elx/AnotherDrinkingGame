@@ -536,6 +536,7 @@ public class Database {
         add("dejtat någon som varit fem år yngre än mig.", t);
         add("haft sönder en spegel.", t);
         add("haft över 100 sekunder på min snap-story.", t);
+        add("blockat någon jag känner på sociala medier.", t);
         //add(".", t);
     }
 
@@ -570,7 +571,7 @@ public class Database {
         add("Vem är klumpigast?", t);
         add("Vem är största huliganen?", t);
         add("Vem är högljuddast?", t);
-        add("Vem är aktivast på sociala medier?", t);
+        add("Vem är mest aktiv på sociala medier?", t);
         add("Vem hanterar alkohol sämst?", t);
         add("Vem dricker mest?", t);
         add("Vem har tråkigast jobb/utbildning?", t);
@@ -612,6 +613,7 @@ public class Database {
         add("Vem är sämst på geografi?", t);
         add("Vem skulle du helst ha som wingman?", t);
         add("Vem kommer gifta sig rik?", t);
+        add("Vem skulle inte klara av att göra lumpen?", t);
         //add("Vem ?", t);
     }
 
@@ -669,6 +671,7 @@ public class Database {
         add("Vem tindrar mest?", B2B_GENERAL);
         add("Vem har äckligast morgonandedräkt?", B2B_COUPLE);
         add("Vem har bäst inredningssmak?", B2B_COUPLE);
+        add("Vem ger bäst presenter?", B2B_COUPLE);
         add("Vem har störst \"fötter\"?", B2B_MALE);
         add("Vem kommer gifta sig först", B2B_GENERAL);
         add("Vem är mest mån om sitt utseende?", B2B_GENERAL);
@@ -703,6 +706,7 @@ public class Database {
         add("Bar", t);
         add("Sång", t);
         add("Boll", t);
+        add("Glas", t);
         //add("", t);
     }
 
@@ -759,6 +763,7 @@ public class Database {
         add("TV-/Datorspel", t);
         add("Porrstjärnor", t);
         add("Ord som slutar på -ist", t);
+        add("Högtider", t);
         //add("", t);
     }
 
@@ -811,6 +816,7 @@ public class Database {
         add("Utse gruppens Party Dog. Denna person måste yla varje gång den druckit upp sin dricka.", MISSION_GENERAL);
         add("Drick varje gång *A* dricker. Uppdraget gäller i en kvart.", MISSION_GENERAL);
         add("Avsluta meningen: Om *A* skulle vara med i ett TV-program skulle det vara...", MISSION_GENERAL);
+        add("Utmana *A* på armbrytning. Förloraren dricker.", MISSION_GENERAL);
     }
 
     /*

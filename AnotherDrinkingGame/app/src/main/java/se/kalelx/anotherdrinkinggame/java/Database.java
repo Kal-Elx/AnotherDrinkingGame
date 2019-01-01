@@ -80,7 +80,7 @@ public class Database {
             createCategories();
         }
         addMissions();
-        countQuestions();
+        //countQuestions();
     }
 
     private void addMissions() {
@@ -817,6 +817,9 @@ public class Database {
         add("Drick varje gång *A* dricker. Uppdraget gäller i en kvart.", MISSION_GENERAL);
         add("Avsluta meningen: Om *A* skulle vara med i ett TV-program skulle det vara...", MISSION_GENERAL);
         add("Utmana *A* på armbrytning. Förloraren dricker.", MISSION_GENERAL);
+        add("Imitera Jabba the Hutt.", MISSION_GENERAL);
+        add("Ta en klunk för var tionde högskolepoäng du har.", MISSION_GENERAL);
+        add("{S}Ge ut uppdraget till valfri person att stava Cornelis Vreeswijk. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
     }
 
     /*

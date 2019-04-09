@@ -537,6 +537,9 @@ public class Database {
         add("haft sönder en spegel.", t);
         add("haft över 100 sekunder på min snap-story.", t);
         add("blockat någon jag känner på sociala medier.", t);
+        add("sett Kim Kardashians sex tape.", t);
+        add("haft sex med en kollega/klasskompis.", t);
+        add("varit otrogen.", t);
         //add(".", t);
     }
 
@@ -548,6 +551,7 @@ public class Database {
         QuestionType t = PG;
         add("Vem kommer bli rikast?", t);
         add("Vem kommer få barn först?", t);
+        add("Vem skulle kunna vara otrogen?", t);
         add("Vem är fullast?", t);
         add("Vem dansar bäst?", t);
         add("Vem skulle ersätta alla sina vänner för 10 miljoner?", t);
@@ -614,6 +618,7 @@ public class Database {
         add("Vem skulle du helst ha som wingman?", t);
         add("Vem kommer gifta sig rik?", t);
         add("Vem skulle inte klara av att göra lumpen?", t);
+        add("Vem i rummet skulle du helst gå på dejt med?", t);
         //add("Vem ?", t);
     }
 
@@ -676,6 +681,7 @@ public class Database {
         add("Vem kommer gifta sig först", B2B_GENERAL);
         add("Vem är mest mån om sitt utseende?", B2B_GENERAL);
         add("Vem är snabbast?", B2B_GENERAL);
+        add("Vem har mest tur i att dejta den andra?", B2B_COUPLE);
         //add("", B2B_);
     }
 

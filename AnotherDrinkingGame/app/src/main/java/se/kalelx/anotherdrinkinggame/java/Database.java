@@ -540,6 +540,28 @@ public class Database {
         add("sett Kim Kardashians sex tape.", t);
         add("haft sex med en kollega/klasskompis.", t);
         add("varit otrogen.", t);
+        add("onanerat på arbetstid.", t);
+        add("varit intresserad i någon i det här rummet.", t);
+        add("haft en könssjukdom.", t);
+        add("testat mig för könssjukdomar.", t);
+        add("tackat ja till en dejt för att få gratis mat.", t);
+        add("haft sex med någon jag inte haft känslor för.", t);
+        add("haft sex när det varit andra personer i rummet.", t);
+        add("krossat någons hjärta.", t);
+        add("begått ett brott.", t);
+        add("legat med någon som varit i ett förhållande med en annan.", t);
+        add("dumpat någon för att den var dålig i sängen.", t);
+        add("dumpat någon via sms.", t);
+        add("hämnats på ett ex.", t);
+        add("kollat på porr.", t);
+        add("utnyttjat någon för sex.", t);
+        add("förstört ett förhållande.", t);
+        add("skickat en nakenbild.", t);
+        add("gjort slut för att jag ville ligga med någon annan.", t);
+        add("varit bunden under sex.", t);
+        add("skapat en extra privat instagram.", t);
+        add("somnat på badrumsgolvet.", t);
+        add("hånglat med flera personer i samma kompisgäng.", t);
         //add(".", t);
     }
 
@@ -619,6 +641,16 @@ public class Database {
         add("Vem kommer gifta sig rik?", t);
         add("Vem skulle inte klara av att göra lumpen?", t);
         add("Vem i rummet skulle du helst gå på dejt med?", t);
+        add("Vem är mest oteknisk?", t);
+        add("Vem kommer sitta i fängelse?", t);
+        add("Vem har haft flest engångsligg?", t);
+        add("Vem blir lättast kär?", t);
+        add("Vem tänder på en själv?", t);
+        add("Vem är hypokondriker?", t);
+        add("Vem är mest känslokall?", t);
+        add("Vem förlorade oskulden senast?", t);
+        add("Vem är mest fejk?", t);
+        add("Vem skulle kunna bli mee too-uthängd?", t);
         //add("Vem ?", t);
     }
 
@@ -632,6 +664,8 @@ public class Database {
         mBackToBackGeneralQuestions = new ArrayList<>();
         add("Vem är bäst på FIFA?", B2B_MALE);
         add("Vem bjuder mest på sig själv?", B2B_GENERAL);
+        add("Vem är mest street smart?", B2B_GENERAL);
+        add("Vem förlorade oskulden först?", B2B_GENERAL);
         add("Vem har bäst klädstil?", B2B_GENERAL);
         add("Vem snyltar mest på sin partner?", B2B_COUPLE);
         add("Vem lägger mest pengar på kläder?", B2B_GENERAL);
@@ -660,7 +694,9 @@ public class Database {
         add("Vem är mest fåfäng?", B2B_GENERAL);
         add("Vem har bäst musiksmak?", B2B_GENERAL);
         add("Vem har bäst flöde på instagram?", B2B_FEMALE);
+        add("Vem shoppar mest?", B2B_FEMALE);
         add("Vem har bäst skäggväxt?", B2B_MALE);
+        add("Vem är grisigast mot tjejer?", B2B_MALE);
         add("Vem kommer bäst klara att föda ett barn?", B2B_FEMALE);
         add("Vem är mest beroende av sin mobil?", B2B_GENERAL);
         add("Vem skulle tjäna mest som prostituerad?", B2B_GENERAL);
@@ -678,10 +714,18 @@ public class Database {
         add("Vem har bäst inredningssmak?", B2B_COUPLE);
         add("Vem ger bäst presenter?", B2B_COUPLE);
         add("Vem har störst \"fötter\"?", B2B_MALE);
+        add("Vem är mest fuckboy?", B2B_MALE);
         add("Vem kommer gifta sig först", B2B_GENERAL);
         add("Vem är mest mån om sitt utseende?", B2B_GENERAL);
         add("Vem är snabbast?", B2B_GENERAL);
+        add("Vem flörtar mest?", B2B_GENERAL);
+        add("Vem gör dummast saker på fyllan?", B2B_GENERAL);
+        add("Vem har bäst humor?", B2B_GENERAL);
+        add("Vem är klantigast?", B2B_GENERAL);
+        add("Vem är kåtast?", B2B_GENERAL);
         add("Vem har mest tur i att dejta den andra?", B2B_COUPLE);
+        add("Vem är bäst på att kyssas?", B2B_COUPLE);
+        add("Vem luktar äckligast?", B2B_GENERAL);
         //add("", B2B_);
     }
 
@@ -818,14 +862,16 @@ public class Database {
         add("Drick ur sugrör resten av kvällen.", MISSION_GENERAL);
         add("Varje gång *A* dricker måste du också dricka. Detta gäller tills du får ett nytt uppdrag.", MISSION_GENERAL);
         add("Prata som Arnold Schwarzenegger tills du får ett nytt uppdrag.", MISSION_GENERAL);
-        add("{S}Ge ut uppdraget till valfri person att stava Arnold Schwarzeneggers efternamn. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
+        add("{S}Ge ut uppdraget till valfri person att stava till Arnold Schwarzeneggers efternamn. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
         add("Utse gruppens Party Dog. Denna person måste yla varje gång den druckit upp sin dricka.", MISSION_GENERAL);
         add("Drick varje gång *A* dricker. Uppdraget gäller i en kvart.", MISSION_GENERAL);
         add("Avsluta meningen: Om *A* skulle vara med i ett TV-program skulle det vara...", MISSION_GENERAL);
         add("Utmana *A* på armbrytning. Förloraren dricker.", MISSION_GENERAL);
         add("Imitera Jabba the Hutt.", MISSION_GENERAL);
+        add("Ge alla i rummet en komplimang.", MISSION_GENERAL);
         add("Ta en klunk för var tionde högskolepoäng du har.", MISSION_GENERAL);
-        add("{S}Ge ut uppdraget till valfri person att stava Cornelis Vreeswijk. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
+        add("{S}Ge ut uppdraget till valfri person att stava till Cornelis Vreeswijk. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
+        add("{S}Ge ut uppdraget till valfri person att stava till crème fraiche. Personen får ta en klunk för varje fel den gör.", MISSION_GENERAL);
     }
 
     /*
